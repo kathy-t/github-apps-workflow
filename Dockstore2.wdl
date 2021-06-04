@@ -1,31 +1,68 @@
+version 1.0
 
-task md5 {
-  File inputFile
+workflow myWorkflow {
+    String? docker_image   = "quay.io/ucsc_cgl/verifybamid:1.3.0"
 
-  command {
-    /bin/my_md5sum ${inputFile}
-  }
-
- output {
-    File value = "md5sum.txt"
- }
-
- runtime {
-   docker: "quay.io/briandoconnor/dockstore-tool-md5sum:1.0.4"
-   cpu: 1
-   memory: "512 MB"
-   disks: "local-disk 10 HDD"
- }
-}
-
-workflow ga4ghMd5 {
- File inputFile
- call md5 { input: inputFile=inputFile }
- 
-  meta {
+    call taglessDocker
+    call latestDocker
+    call parmeterizedDocker
+    call versionedDocker
+    call digestDocker
+    
+    meta {
       author : "Test User"
       email : "test@dockstore.org"
       description: "This is a description"
    }
 }
 
+task taglessDocker {
+    command {
+        echo "hello world"
+    }
+    output {
+        String out = read_string(stdout())
+    }
+    runtime {
+        docker: "katetran/dockstore-tool-helloworld"
+    }
+}
+
+task parmeterizedDocker {
+    input {
+        String docker_image
+    }
+    command {
+        echo "hello world"
+    }
+    runtime {
+        docker: docker_image
+    }
+}
+
+task latestDocker {
+    command {
+        echo "hello world"
+    }
+    runtime {
+        docker: "katetran/dockstore-tool-helloworld:latest"
+    }
+}
+
+task versionedDocker {
+    command {
+        echo "hello world"
+    }
+    runtime {
+        docker: "katetran/dockstore-tool-helloworld:1"
+    }
+}
+
+task digestDocker {
+    command {
+        echo "hello world"
+    }
+    runtime {
+        docker: "katetran/dockstore-tool-helloworld@sha256:0484449b6bdd6e39a34f630a86e18253f6b88899d64faa652c926e90001c84d4"
+    }
+}
