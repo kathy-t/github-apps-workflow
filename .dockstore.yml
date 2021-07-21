@@ -6,6 +6,15 @@ workflows:
           testParameterFiles:
               - /dockstore.wdl.json
           latestTagAsDefault: false
+          authors:
+              - name: WDL man without orcid
+                email: test@gmail.com
+                role: Not spy
+                affiliation: OICR
+              - name: WDL man with orcid
+                orcid: 00000-11111-00000
+                email: test2@gmail.com
+                role: Spy
        -  name: foobar2
           subclass: cwl
           primaryDescriptorPath: /Dockstore.cwl
