@@ -12,3 +12,13 @@ workflows:
           latestTagAsDefault: true
           testParameterFiles:
               - /dockstore.cwl.json
+          authors:
+              - name: Man without orcid
+                email: test@gmail.com
+                role: Not spy
+                affiliation: I spy2
+              - name: Man with orcid
+                orcid: 00000-11111-00000
+                email: test2@gmail.com
+                role: Spy
+                affiliation: I spy
