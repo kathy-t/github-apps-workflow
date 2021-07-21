@@ -13,8 +13,6 @@ workflows:
                 affiliation: OICR
               - name: WDL man with orcid
                 orcid: 00000-11111-00000
-                email: test2@gmail.com
-                role: Spy
        -  name: foobar2
           subclass: cwl
           primaryDescriptorPath: /Dockstore.cwl
@@ -27,7 +25,4 @@ workflows:
                 role: Not spy
                 affiliation: I spy2
               - name: Man with orcid
-                orcid: 00000-11111-00000
-                email: test2@gmail.com
-                role: Spy
-                affiliation: I spy
+                orcid: 00000-22222-00000
