@@ -1,19 +1,6 @@
 version: 1.2
 workflows:
-       -  name: foobar
-          subclass: wdl
-          primaryDescriptorPath: /Dockstore2.wdl
-          testParameterFiles:
-              - /dockstore.wdl.json
-          latestTagAsDefault: false
-          authors:
-              - name: WDL man without orcid
-                email: test@gmail.com
-                role: Not spy
-                affiliation: OICR
-              - name: WDL man with orcid
-                orcid: 00000-11111-00000
-       -  name: foobar2
+       -  name: authorsWorkflow
           subclass: cwl
           primaryDescriptorPath: /Dockstore.cwl
           latestTagAsDefault: true
