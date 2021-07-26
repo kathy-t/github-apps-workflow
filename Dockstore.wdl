@@ -15,6 +15,11 @@ task md5 {
    memory: "512 MB"
    disks: "local-disk 10 HDD"
  }
+ 
+ meta {
+   author : "wdl test author 1, wdl test author 2"
+   email : "wdltest1@gmail.com, wdltest2@gmail.com"
+  }
 }
 
 workflow ga4ghMd5 {
