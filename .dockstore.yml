@@ -13,3 +13,16 @@ workflows:
                 affiliation: I spy2
               - name: Man with orcid
                 orcid: 00000-22222-00000
+       -  name: wdlAuthorsWorkflow
+          subclass: wdl
+          primaryDescriptorPath: /Dockstore.wdl
+          latestTagAsDefault: true
+          testParameterFiles:
+              - /dockstore.wdl.json
+          authors:
+              - name: wdl test author
+                email: wdltest@gmail.com
+                role: WDL man
+                affiliation: WDL org
+              - name: wdl orcid author
+                orcid: 00000-12345-00000
