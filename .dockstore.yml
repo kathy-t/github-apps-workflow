@@ -13,3 +13,4 @@ workflows:
                 affiliation: I spy2
               - name: Man with orcid
                 orcid: 00000-22222-00000
+              - orcid: 12345-67890-12345
