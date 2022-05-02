@@ -1,6 +1,6 @@
 cwlVersion: v1.0
 class: Workflow
-doc: "This is a description"
+doc: "This is a description!"
 
 dct:creator:
   foaf:name: CWL Descriptor Author
