@@ -11,5 +11,3 @@ workflows:
                 email: test@gmail.com
                 role: Not spy
                 affiliation: I spy2
-              - name: Man with orcid
-                orcid: 00000-22222-00000
